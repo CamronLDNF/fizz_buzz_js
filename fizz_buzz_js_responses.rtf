@@ -78,4 +78,48 @@ To create a new instance of the FizzBuzz class.\
 Because when we receive higher numbers\'85 to numbers that are divisible by both, e.g. 15, \'85\
 
 \f0\b \
+Question 5. In your README to the best of your knowledge please explain the difference between feature and unit test
+\f1\b0 \
+\
+Unit Tests are written from a programmers perspective. They are made to ensure that a particular method (or a unit) of a class performs a set of specific tasks.\
+\
+Feature Tests are written from the user's perspective. They ensure that the system is functioning as users are expecting it to.\
+\
+Best explanation {\field{\*\fldinst{HYPERLINK "https://laracasts.com/discuss/channels/testing/feature-vs-unit"}}{\fldrslt here}}. \
+\
+
+\f0\b Question 6. In your README to the best of your knowledge please explain what expectations in the context of testing are
+\f1\b0 \
+\
+It\'92s the assertion, i.e., what you expect the source code to return for that given function / feature that is being tested.\
+\
+
+\f0\b Question 7. In your README to the best of your knowledge please write a line to line explanation of what is happening in this code
+\f1\b0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f2\i \cf0 <script src="src/js/fizz-buzz.js"></script> 
+\f1\i0 	\'97 runs the ???\
+   
+\f2\i  <script>\
+        document.addEventListener('DOMContentLoaded', () => \{
+\f1\i0 	\'97 loads the DOM, so the JS code can run against it\
+         
+\f2\i    let button = document.getElementById('button')    
+\f1\i0 \'97 gets the button input from the DOM and assigns it to the variable \'91button\'92
+\f2\i \
+            let displayDiv = document.getElementById('display_answer')  
+\f1\i0 \'97 gets the answer input from the DOM and assigns it to the variable \'91displayDiv\'92
+\f2\i \
+            button.addEventListener('click', () =>\{	
+\f1\i0 \'97 adds an event listener
+\f2\i \
+                let value = document.getElementById('value').value\
+                let fizzBuzz = new FizzBuzz\
+                let result = fizzBuzz.check(value)\
+                displayDiv.innerHTML = result;\
+            \})\
+        \})\
+    </script>\
 }
