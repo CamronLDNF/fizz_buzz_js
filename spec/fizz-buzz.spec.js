@@ -11,4 +11,8 @@ describe('Fizz Buzz', () => {            // should there really be a space 'Fizz
         expect(fizzBuzz.check(3)).to.eql('Fizz')
     })
 
+    it('returns Buzz if number is divisible by 5', () => {
+        expect(fizzBuzz.check(5)).to.eql('Buzz')
+    })
+    
 })
