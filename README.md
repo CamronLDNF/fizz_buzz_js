@@ -1,8 +1,6 @@
 # **FizzBuzz Challenge**
 -------
 
-## Deployment
-
 FizzBuzz Site: https://camronldnf.github.io/fizz_buzz_js/
 
 Repo: https://github.com/CamronLDNF/fizz_buzz_js
@@ -24,7 +22,7 @@ This challenge was to recreate the FizzBuzz challenge in Javascript.
 
 * The node fs module provides an API for interacting with the file system. To use the module, one first adds:
 
-const fs = require('fs');
+```const fs = require('fs');```
 
 With Node.js, there are two ways one can open and read files using the fs module:
 
@@ -75,7 +73,7 @@ fs.readFileSync method however runs synchronously (blocking). In other words, th
 
 * Unit Tests are written from a programmers perspective. They are made to ensure that a particular method (or a unit) of a class performs a set of specific tasks.
 
-Feature Tests are written from the user's perspective. They ensure that the system is functioning as users are expecting it to.
+* Feature Tests are written from the user's perspective. They ensure that the system is functioning as users are expecting it to.
 
 
 ### Question 6:
