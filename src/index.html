@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>FizzBuzz</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FizzBuzz</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link href="./style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-    <input type="text" id="value">
-    <input type="submit" value="Check" id="button">
-    <div id="display_answer"></div>
+    <div class="container">
+        <img src="./assets/fizzbuzz_logo.jpg">
+        <p>Enter a number:</p>
+        <div class="mb-4"></div>
+        <input type="text" id="value">
+        <input type="submit" value="Check" id="button">
+        <div id="display_answer"></div>
+    </div>
 </body>
 
 <script src="./js/fizz-buzz.js"></script>
