@@ -1,31 +1,17 @@
 # **FizzBuzz Challenge**
 -------
 
-## Deployed site
+## Deployment
 
-FizzBuzz Site: (https://rupertlion.github.io/fizzbuzz_temp_deployment/)
+FizzBuzz Site: https://camronldnf.github.io/fizz_buzz_js/
 
-Pull request: https://github.com/rupertlion/fizzbuzz_rupert/pull/1
-
-## Prerequisites
--------
-Initialised npm (package manager) and utilising: superstatic (for feature-testing), mocha (for unit-testing).
-
-## Built With
--------
-
-* [Javascript](https://www.javascript.com/) - The programming language used
-* [npm](https://www.npmjs.com/) - Package manager
-* [Chai](http://www.chaijs.com/) - BDD / TDD assertion library
-* [Mocha](https://mochajs.org/) - Testing framework
-* [Tailwind](https://tailwindcss.com/) - CSS Styling
+Repo: https://github.com/CamronLDNF/fizz_buzz_js
 
 ## **Overview**
--------
-The purpose of this challenge is to create a FizzBuzz app in Javascript programming lanugage, test and style the site.
+This challenge was to recreate the FizzBuzz challenge in Javascript.
 
-## **Specific questions**
--------
+
+## **Questions**
 
 ### Question 1:
 
@@ -36,16 +22,19 @@ The purpose of this challenge is to create a FizzBuzz app in Javascript programm
 
 #### Answer:
 
-* The previous lines of code required 'fs'.The fs module provides an API for interacting with a file system when using node.js. This allows use of node.js as a file server, including the ability to read, write, update and delete files in local folders. (Node.js allows us to run on our machine as a standalone application rather than only in a browser).
+* The node fs module provides an API for interacting with the file system. To use the module, one first adds:
 
-* The following line of code allows node.js modules to read the fizz-buzz.js implementation code that resides locally on my computer. That function is subsequently stored in a variable called 'fizzBuzz': 
-    ```
-    let  fizzBuzz = fs.readFileSync('./src/js/fizz-buzz.js')
-    ```
+const fs = require('fs');
 
-*  The eval() method reads strings as js code. In the case of the code above, `\nexports.FizzBuzz = FizzBuzz;` is appended to the implementation code in fizz-buzz.js. My assumption is that this, in effect allows the the implementation code to be exported to node modules.
+With Node.js, there are two ways one can open and read files using the fs module:
 
--------
+	•	Load all of the contents at once (buffering)
+	•	Incrementally load contents (streaming)
+
+fs.readFile is the most common method  and runs asynchronously. This one should be used whenever possible to avoid blocking the main execution thread. 
+
+fs.readFileSync method however runs synchronously (blocking). In other words, the file contents are returned directly from the function call and the execution thread is blocked while it loads the file. Best practice is to use this in start-up sections of the program (like when we're loading config files) or in command-line apps where blocking the main thread isn't a big deal.
+
 
 ### Question 2:
 
@@ -56,9 +45,8 @@ The purpose of this challenge is to create a FizzBuzz app in Javascript programm
 
 #### Answer:
 
-* We want all the tests to run on a new instance of fizzbuzz, rather than keep testing the same one with tests one after the other.
+* To create a new instance of the FizzBuzz class for the tests.
 
--------
 
 ### Question 3:
 
@@ -66,12 +54,9 @@ The purpose of this challenge is to create a FizzBuzz app in Javascript programm
 
 #### Answer:
 
-* When using triple equals === in JavaScript, we are testing for strict equality. This means both the type and the value we are comparing have to be the same. e.g. 'hello world' === 'hello world' // true (Both Strings, equal values).
+* ‘===‘ means the the values have to match in both data type and value
+* ‘==‘ means it can just match in value (so for example ’123’ == 123 would evaluate to true)
 
-* When using double equals in JavaScript we are testing for loose equality. e.g. 77 == '77'
-// true.
-
--------
 
 ### Question 4:
 
@@ -79,9 +64,8 @@ The purpose of this challenge is to create a FizzBuzz app in Javascript programm
 
 #### Answer:
 
-* Javascript reads from left to right and top to bottom in the code. In the if statement, the code will be read until 'true' is returned and then will stop.
+* Because the code is read top-down, so it wouldn't evaluate for 5 otherwise if it renders something as true before it gets to 5. 
 
--------
 
 ### Question 5:
 
@@ -89,21 +73,19 @@ The purpose of this challenge is to create a FizzBuzz app in Javascript programm
 
 #### Answer:
 
-* Unit Tests are written from a developer's perspective to ensure that a particular method (or a unit) of a class performs a set of specific tasks. This can be thought of as testing the code is fulling the requirements expected by the developer.
+* Unit Tests are written from a programmers perspective. They are made to ensure that a particular method (or a unit) of a class performs a set of specific tasks.
 
-* Feature Tests are written from the user's perspective and ensure that the system is functioning as users would expect it to. In effect the feature fest automates what 'real life user' might do when using the application to see if it would fullfill their requirements.
+Feature Tests are written from the user's perspective. They ensure that the system is functioning as users are expecting it to.
 
--------
 
 ### Question 6:
 
-####  In your README to the best of your knowledge please explain what expectations in the context of testing are?
+####  In your README to the best of your knowledge please explain what expectations are in the context of testing are?
 
 #### Answer:
 
-* When creating a test, the developer sets what the result SHOULD be when the implemenation code is run with the inputs provided. Expectations link what the developer is expecting to the results of running the implementation code.
+* It’s the assertion, i.e., what you expect the source code to return for that given function / feature that is being tested.
 
--------
 
 ### Question 7:
 
@@ -111,52 +93,8 @@ The purpose of this challenge is to create a FizzBuzz app in Javascript programm
 
 #### Answer:
 
-```
-<script src="src/js/fizz-buzz.js"></script>
-```
-The fizz-buzz.js implementation code is being connected to the DOM to allow manipulation of the html.
+* First, the fizz-buzz.js source code is being linked to the index file. Then, the DOM is connected to the index file and event listeners and event handlers are embedded. 
 
-```
-document.addEventListener('DOMContentLoaded', () => {
-```
-The code within the following {} will be executed when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
-
-```
-let button = document.getElementById('button')
-```
-Setting the HTML element with Id 'button' to a variable 'button' for the purposes of manipulation in the DOM.
-
-```
-let displayDiv = document.getElementById('display_answer')
-```
-Setting the HTML element with Id 'display_answer' to a variable 'displayDiv' for the purposes of manipulation in the DOM.
-
-```
-button.addEventListener('click', () =>{
-```
-The code within the following {} will be executed when the 'button' object in the DOM is clicked.
-
-```
-let value = document.getElementById('value').value
-```
-Setting the HTML element with Id 'value' to a variable 'value' for the purposes of manipulation in the DOM (as part of the 'click' event listener).
-
-```
-let fizzBuzz = new FizzBuzz
-```
-Creating a new instance of the FizzBuzz javascript class and storing in a new variable called 'fizzbuzz'.
-
-```
-let result = fizzBuzz.check(value)
-```
-Taking the value returned by the new instance of the FizzBuzz javascript implementation and storing that result in a new variable called 'result'.
-
-```
-displayDiv.innerHTML = result;
-```
-Changes the variable 'displayDiv' that holds the 'display_answer' HTML element to the newly created 'result' variable that holds the result of the FizzBuzz javascript implementation.
-
--------
 
 ### Question 8:
 
@@ -164,11 +102,4 @@ Changes the variable 'displayDiv' that holds the 'display_answer' HTML element t
 
 #### Answer:
 
-* A content delivery network (CDN) is a system of distributed servers that deliver pages and other Web content to a user, based on the geographic locations of the user, the origin of the webpage and the content delivery server. CDNs also provide protection from large surges in traffic.
-
-* By way of example, if you were to use Netflix them having a suitable CDN in place, you would likely be accessing content based on servers on the West Coast of the US. This would cause huge issues of latency and bandwidth contraints that would likely reduce the quality of the viewing experience. Instead, content is "cached" in servers located geographically close to the user to allow for faster loading and lower latency.
-
--------
-## **Author**
--------
-* **Rupert Lion**
+* A content delivery network is a distributed platform of servers optimized to deliver content including web applications and streaming media. This network of servers is dispersed across many physical and network locations, in order to respond directly to end user requests for web content and fast, secure media delivery. It acts as an intermediary between a content server, also known as the origin, and its end users or clients.
