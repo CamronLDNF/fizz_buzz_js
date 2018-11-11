@@ -11,9 +11,11 @@
 \f0\b\fs24 \cf0 Question 1. In your README to the best of your knowledge please explain what the following lines of code do:
 \f1\b0 \
 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f2\i let  fizzBuzz = fs.readFileSync('./src/js/fizz-buzz.js');\
-\cb2 eval( fizzBuzz + `\\nexports.FizzBuzz = FizzBuzz;`)
+\f2\i \cf0 let  fizzBuzz = fs.readFileSync('./src/js/fizz-buzz.js');\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \cb2 eval( fizzBuzz + `\\nexports.FizzBuzz = FizzBuzz;`)
 \f1\i0 \cb1 \
 \
 \
@@ -21,10 +23,12 @@ The node
 \f2\i fs
 \f1\i0  module provides an API for interacting with the file system. To use the module, one first adds:\
 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f2\i const fs = require('fs');\
+\f2\i \cf0 const fs = require('fs');\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f1\i0 \
+\f1\i0 \cf0 \
 With Node.js, there are two ways one can open and read files using the 
 \f2\i fs
 \f1\i0  module:\
@@ -34,8 +38,9 @@ With Node.js, there are two ways one can open and read files using the
 {\listtext	\uc0\u8226 	}Incrementally load contents (streaming)\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f3\i\b fs.readFile
+\f3\i\b \cf0 fs.readFile
 \f1\i0\b0  is the most common method runs asynchronously. This one should be used whenever possible to avoid blocking the main execution thread. \
 \
 
@@ -44,16 +49,77 @@ With Node.js, there are two ways one can open and read files using the
 \
 Reference {\field{\*\fldinst{HYPERLINK "https://stackabuse.com/read-files-with-node-js/"}}{\fldrslt here}}.\
 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\b Question 2. In your README to the best of your knowledge please explain why we are placing the\
+\f0\b \cf0 Question 2. In your README to the best of your knowledge please explain why we are placing the\
 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f2\i\b0 let fizzBuzz = new FizzBuzz\
+\f2\i\b0 \cf0 let fizzBuzz = new FizzBuzz\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\i0\b \
+\f0\i0\b \cf0 \
 outside the it block?
 \f1\b0 \
 \
-To create a new instance of the FizzBuzz class.
+To create a new instance of the FizzBuzz class.\
+\
+
+\f0\b Question 3. In your README to the best of your knowledge please explain the difference between using === and == in JS?
+\f1\b0 \
+\
+\'91===\'91 means the the values have to match in both data type and value\
+\'91==\'91 means it can just match in value (so for example \'92123\'92 == 123 would evaluate to true)\
+\
+
+\f0\b Question 4. In your README to the best of your knowledge please explain why we are moving (number % 5 === 0) to the top?
+\f1\b0 \
+\
+Because when we receive higher numbers\'85 to numbers that are divisible by both, e.g. 15, \'85\
+
 \f0\b \
+Question 5. In your README to the best of your knowledge please explain the difference between feature and unit test
+\f1\b0 \
+\
+Unit Tests are written from a programmers perspective. They are made to ensure that a particular method (or a unit) of a class performs a set of specific tasks.\
+\
+Feature Tests are written from the user's perspective. They ensure that the system is functioning as users are expecting it to.\
+\
+Best explanation {\field{\*\fldinst{HYPERLINK "https://laracasts.com/discuss/channels/testing/feature-vs-unit"}}{\fldrslt here}}. \
+\
+
+\f0\b Question 6. In your README to the best of your knowledge please explain what expectations in the context of testing are
+\f1\b0 \
+\
+It\'92s the assertion, i.e., what you expect the source code to return for that given function / feature that is being tested.\
+\
+
+\f0\b Question 7. In your README to the best of your knowledge please write a line to line explanation of what is happening in this code
+\f1\b0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f2\i \cf0 <script src="src/js/fizz-buzz.js"></script> 
+\f1\i0 	\'97 runs the ???\
+   
+\f2\i  <script>\
+        document.addEventListener('DOMContentLoaded', () => \{
+\f1\i0 	\'97 loads the DOM, so the JS code can run against it\
+         
+\f2\i    let button = document.getElementById('button')    
+\f1\i0 \'97 gets the button input from the DOM and assigns it to the variable \'91button\'92
+\f2\i \
+            let displayDiv = document.getElementById('display_answer')  
+\f1\i0 \'97 gets the answer input from the DOM and assigns it to the variable \'91displayDiv\'92
+\f2\i \
+            button.addEventListener('click', () =>\{	
+\f1\i0 \'97 adds an event listener
+\f2\i \
+                let value = document.getElementById('value').value\
+                let fizzBuzz = new FizzBuzz\
+                let result = fizzBuzz.check(value)\
+                displayDiv.innerHTML = result;\
+            \})\
+        \})\
+    </script>\
 }
